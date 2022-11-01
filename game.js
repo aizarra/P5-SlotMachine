@@ -1,64 +1,72 @@
 class Game{
     constructor(){
-        this.slot1 = new Slot1 (50, 100, -5)
-        this.slot2 = new Slot2(200, 100, -3)
-        this.slot3 = new Slot1(400, 200, -1)
-        this.slotReel
+     this.slots = []
+     this.image
+     this.image1
+     this.image2
+     this.image3
+     this.image4
+     this.image5
+     this.image6
+     this.slots.push(new Slot(150, 100))
+     this.slots.push(new Slot(300, 100))
+     this.slots.push(new Slot(450, 100))
+     this.button 
     }
     preload(){
-    this.slot1.preload()
-    this.slot2.preload()
-    this.slot3.preload()
-  }
+        this.image = loadImage ("./BGImages/Merkel.png")
+        this.image1 = loadImage ("./BGImages/Merkel.png")
+        this.image2 = loadImage ("./BGImages/Trump.png")
+        this.image3 = loadImage ("./BGImages/Biden.png")
+        this.image4 = loadImage ("./BGImages/Khamenei.png")
+        this.image5 = loadImage ("./BGImages/Zelensky.png")
+        this.image6 = loadImage ("./BGImages/Putin.png")
+
+
+
+}
+ 
     draw (){
-    this.slot1.draw()
-    this.slot2.draw()
-    this.slot3.draw()
+        this.slots.forEach(function(slot){
+        slot.draw()
+    })
         
     }
-}
+       
+    }
 
-class Slot1{
-    constructor(x ,y , speed){
+class Slot{
+    constructor(x ,y){
         this.x =x
-        this.y = y
-        this.speed =speed
-        this.image
+        this.y =y
+
     }
     preload (){
-        this.image = loadImage ("./BGImages/slotReel.png")
 
     }
-    draw(){
-        clear()
-        this.y -= this.speed
-        image(this.image, this.x, this.y-500, 60, 500)
-        image(this.image, this.x, this.y, 60, 500)
-        if (this.y >= height) this.y = 0
-
+    draw(){   
+        if(spinning === false) {
+            console.log("not spinning")
+        } else {console.log("yes spinning")}
+    image(game.image,this.x,this.y, 100 , 100)
+if (frameCount % 5 == 0){
+    game.image = game.image2
+} else if (frameCount % 7 == 1) {
+    game.image = game.image1;
+} else if (frameCount % 7 == 2) {
+    game.image = game.image2;
+} else if (frameCount % 7 == 3) {
+    game.image = game.image3;
+} else if (frameCount % 7 == 4) {
+    game.image = game.image4;
+} else if (frameCount % 7 == 5) {
+    game.image = game.image5;
+} else {
+    game.image = game.image6
+}
        
 
     }
-}
-class Slot2{
-    constructor(x ,y , speed){
-        this.x =x
-        this.y = y
-        this.speed =speed
-        this.image
-    }
-    preload (){
-        this.image = loadImage ("./BGImages/slotReel.png")
 
-    }
-    draw(){
-        clear()
-        this.y -= this.speed
-        image(this.image, this.x, this.y-500, 60, 500)
-        image(this.image, this.x, this.y, 60, 500)
-        if (this.y >= height) this.y = 0
 
-       
-
-    }
 }
