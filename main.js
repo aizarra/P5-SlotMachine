@@ -1,17 +1,20 @@
 const game = new Game()
-let button;
-let spinning = false
-
+// let button;
+// let spinning = false
+let img;
 // Load game assets
-function preload() {
+function preload() {  
 	game.preload()
+    img = loadImage("./BGImages/earth.png")
 }
 
 function setup() {
 	createCanvas(600, 500)
-    background("green")
-    button = createButton('start');
-    button.position(350, 350);
+     background(img)
+    // background(loadImage("./BGImages/earth.gif"))
+    // background(loadImage("./BGImages/Merkel.png"))
+    // button = createButton('start');
+    // button.position(350, 350);
     // button.mousePressed(tester());
     
 
@@ -22,16 +25,12 @@ function setup() {
     //     console.log("pressed", )
     // }
 function draw() {
-	game.draw()
-    if 
+    // background(img)
+    if (mouseIsPressed === true){
+        game.draw()
+    }
 }
 
-function keyPressed() {
-    if (keyCode === 15) {
-		game.draw()
-	}
-	}
-// function updateButton (){
-//     if (button = )
-// }
+
+
  

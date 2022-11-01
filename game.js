@@ -8,12 +8,13 @@ class Game{
      this.image4
      this.image5
      this.image6
-     this.slots.push(new Slot(150, 100))
-     this.slots.push(new Slot(300, 100))
-     this.slots.push(new Slot(450, 100))
-     this.button 
+     this.slots.push(new Slot1(25, 175))
+     this.slots.push(new Slot2(225, 175))
+     this.slots.push(new Slot3(425, 175))
+    //  this.background
     }
     preload(){
+        // this.background = loadImage("./BGImages/Merkel.png")
         this.image = loadImage ("./BGImages/Merkel.png")
         this.image1 = loadImage ("./BGImages/Merkel.png")
         this.image2 = loadImage ("./BGImages/Trump.png")
@@ -35,7 +36,7 @@ class Game{
        
     }
 
-class Slot{
+class Slot1{
     constructor(x ,y){
         this.x =x
         this.y =y
@@ -45,10 +46,10 @@ class Slot{
 
     }
     draw(){   
-        if(spinning === false) {
-            console.log("not spinning")
-        } else {console.log("yes spinning")}
-    image(game.image,this.x,this.y, 100 , 100)
+        // if(spinning === false) {
+        //     console.log("not spinning")
+        // } else {console.log("yes spinning")}
+    image(game.image,this.x,this.y, 150 , 150)
 if (frameCount % 5 == 0){
     game.image = game.image2
 } else if (frameCount % 7 == 1) {
@@ -70,3 +71,73 @@ if (frameCount % 5 == 0){
 
 
 }
+
+class Slot2{
+    constructor(x ,y){
+        this.x =x
+        this.y =y
+
+    }
+    preload (){
+
+    }
+    draw(){   
+    image(game.image,this.x,this.y, 150 , 150)
+if (frameCount % 5 == 0){
+    game.image = game.image2
+} else if (frameCount % 4 == 1) {
+    game.image = game.image1;
+} else if (frameCount % 4 == 2) {
+    game.image = game.image2;
+} else if (frameCount % 4 == 3) {
+    game.image = game.image3;
+} else if (frameCount % 4 == 4) {
+    game.image = game.image4;
+} else if (frameCount % 4 == 5) {
+    game.image = game.image5;
+} else {
+    game.image = game.image6
+}
+       
+
+    }
+
+
+}
+
+class Slot3{
+    constructor(x ,y){
+        this.x =x
+        this.y =y
+
+    }
+    preload (){
+
+    }
+    draw(){   
+        // if(spinning === false) {
+        //     console.log("not spinning")
+        // } else {console.log("yes spinning")}
+    image(game.image,this.x,this.y, 150 , 150)
+if (frameCount % 3 == 0){
+    game.image = game.image2
+} else if (frameCount % 5 == 1) {
+    game.image = game.image1;
+} else if (frameCount % 5 == 2) {
+    game.image = game.image2;
+} else if (frameCount % 5 == 3) {
+    game.image = game.image3;
+} else if (frameCount % 5 == 4) {
+    game.image = game.image4;
+} else if (frameCount % 5 == 5) {
+    game.image = game.image5;
+} else {
+    game.image = game.image6
+}
+       
+
+    }
+
+
+}
+// if (this.Slot1 && this.Slot2 && this.Slot3
