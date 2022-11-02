@@ -16,14 +16,21 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed === true) {
+    document.getElementById('result').innerText = 'spinning...';
     game.draw();
   } else if (
+    game.slots[0].image !== undefined &&
+    game.slots[1].image !== undefined &&
+    game.slots[2].image !== undefined &&
     game.slots[0].image == game.slots[1].image &&
     game.slots[1].image == game.slots[2].image
   ) {
-    console.log('IMAGE:', game.slots[0].image);
-    console.log('you win');
-  } else {
-    console.log('You Loose!');
+    document.getElementById('result').innerText = 'You win!';
+  } else if (
+    game.slots[0].image !== undefined &&
+    game.slots[1].image !== undefined &&
+    game.slots[2].image !== undefined
+  ) {
+    document.getElementById('result').innerText = 'You loose!';
   }
 }

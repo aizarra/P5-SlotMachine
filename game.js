@@ -41,7 +41,6 @@ class Slot1 {
   }
   preload() {}
   draw() {
-    image(game.image, this.x, this.y, 150, 150);
     if (frameCount % 5 == 0) {
       game.image = game.image2;
       this.image = game.image2;
@@ -64,6 +63,7 @@ class Slot1 {
       game.image = game.image6;
       this.image = game.image6;
     }
+    image(game.image, this.x, this.y, 150, 150);
   }
 }
 
@@ -75,7 +75,6 @@ class Slot2 {
   }
   preload() {}
   draw() {
-    image(game.image, this.x, this.y, 150, 150);
     if (frameCount % 5 == 0) {
       game.image = game.image2;
       this.image = game.image2;
@@ -98,6 +97,7 @@ class Slot2 {
       game.image = game.image6;
       this.image = game.image6;
     }
+    image(game.image, this.x, this.y, 150, 150);
   }
 }
 
@@ -109,7 +109,6 @@ class Slot3 {
   }
   preload() {}
   draw() {
-    image(game.image, this.x, this.y, 150, 150);
     if (frameCount % 3 == 0) {
       game.image = game.image2;
       this.image = game.image2;
@@ -132,5 +131,6 @@ class Slot3 {
       game.image = game.image6;
       this.image = game.image6;
     }
+    image(game.image, this.x, this.y, 150, 150);
   }
 }
