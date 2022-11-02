@@ -1,36 +1,29 @@
-const game = new Game()
-// let button;
-// let spinning = false
+const game = new Game();
+
+game.slot1;
+
 let img;
-// Load game assets
-function preload() {  
-	game.preload()
-    img = loadImage("./BGImages/earth.png")
+
+function preload() {
+  game.preload();
+  img = loadImage('./BGImages/earth.png');
 }
 
 function setup() {
-	createCanvas(600, 500)
-     background(img)
-    // background(loadImage("./BGImages/earth.gif"))
-    // background(loadImage("./BGImages/Merkel.png"))
-    // button = createButton('start');
-    // button.position(350, 350);
-    // button.mousePressed(tester());
-    
-
-    //button.keyPressed(game.draw)
-
+  createCanvas(600, 500);
+  background(img);
 }
-    // function tester() {
-    //     console.log("pressed", )
-    // }
+
 function draw() {
-    // background(img)
-    if (mouseIsPressed === true){
-        game.draw()
-    }
+  if (mouseIsPressed === true) {
+    game.draw();
+  } else if (
+    game.slots[0].image == game.slots[1].image &&
+    game.slots[1].image == game.slots[2].image
+  ) {
+    console.log('IMAGE:', game.slots[0].image);
+    console.log('you win');
+  } else {
+    console.log('You Loose!');
+  }
 }
-
-
-
- 
